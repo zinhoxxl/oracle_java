@@ -21,8 +21,7 @@ public class DaoConnector {
   //4.연결객체 생성 메소드
   public static Connection getConnection() throws Exception {
 		final String driver ="oracle.jdbc.OracleDriver";
-		final String url ="jdbc:oracle:thin:@jdbc:oracle:thin:@db202110231136_high?"
-				         + " TNS_ADMIN=/Users/alpha/oracle/Wallet_DB202110231136";
+		final String url ="jdbc:oracle:thin:@db202110231136_high?TNS_ADMIN=/Users/alpha/oracle/Wallet_DB202110231136";
 		final String userid="madang";
 		final String pwd ="Scott12345678";
 	    Class.forName(driver);
