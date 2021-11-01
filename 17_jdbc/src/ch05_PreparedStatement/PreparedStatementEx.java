@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class PreparedStatementEx {
 	public static void main(String[] args) {
@@ -20,7 +21,7 @@ public class PreparedStatementEx {
 		    
 		    //3.sql문 전송객체 생성 - template형식객체
 		    String sql = "select * from customer where custid=?";
-		    PreparedStatement pstmt	= con.prepareStatement(sql); //생성시 sql문을 매개변수로 받아서 생
+		    PreparedStatement pstmt	= con.prepareStatement(sql); //생성시 sql문을 매개변수로 받아서 생성
 		    //sql문 전달시 10이 바인딩되어서 완전한 쿼리문으로 전달
 		    pstmt.setInt(1, 10);
 			
@@ -29,10 +30,22 @@ public class PreparedStatementEx {
 			rs.next();
 			System.out.println(rs.getInt(1)+","+rs.getString(2)+","+rs.getString(3)+rs.getString(4));
 			
-		}catch(Exception e) {
+			//Statement stmt = pstmt;
+			//stmt.close();
 			
-		}
-		
+			 try {
+				 closeResource(pstmt, rs, con);
+			 }catch(Exception e) {}
+			 
+	  }catch(Exception e) {
+		  
+	  }
+	}
+	  static void closeResource(Statement stmt, ResultSet rs, Connection con) throws Exception{
+		      stmt.close();
+		      rs.close();
+		      con.close();
+	  }
+	 
 	}
 
-}
