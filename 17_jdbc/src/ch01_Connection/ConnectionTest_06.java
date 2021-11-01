@@ -11,8 +11,7 @@ public class ConnectionTest_06 {
 		 //1.드라이버 로딩
 		 Class.forName("oracle.jdbc.OracleDriver");
 		 //2.연결객체 생성
-		 Connection con = DriverManager.getConnection("jdbc:oracle:thin:@jdbc:oracle:thin:@db202110231136_high?"
-		 		+ "                                   TNS_ADMIN=/Users/alpha/oracle/Wallet_DB202110231136",
+		 Connection con = DriverManager.getConnection("jdbc:oracle:thin:@db202110231136_high?TNS_ADMIN=/Users/alpha/oracle/Wallet_DB202110231136",
 				                                          "madang", "Scott12345678");
 		 //3.쿼리객체 생성
 		 Statement stmt = con.createStatement();

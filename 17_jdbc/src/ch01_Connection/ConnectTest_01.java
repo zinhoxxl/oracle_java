@@ -14,7 +14,7 @@ public class ConnectTest_01 {
        String pwd ="Scott12345678";
        
      
-       //드라이버 로딩
+       //드라이버 로딩 
        try {
     	    //oracle DB연결 드라이버 로딩
     	    Class.forName("oracle.jdbc.OracleDriver");//

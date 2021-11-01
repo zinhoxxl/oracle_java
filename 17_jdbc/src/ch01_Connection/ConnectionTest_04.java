@@ -12,9 +12,8 @@ public class ConnectionTest_04 {
 			//1.연결드라이버 로딩
 			Class.forName("oracle.jdbc.OracleDriver");
 			//2.로딩된 드라이버로부터 연결객체 생성
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@jdbc:oracle:thin:@db202110231136_high?"
-					                        + " TNS_ADMIN=/Users/alpha/oracle/Wallet_DB202110231136", 
-							                "madang", "madang");
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@db202110231136_high?TNS_ADMIN=/Users/alpha/oracle/Wallet_DB202110231136", 
+							                "madang", "Scott12345678");
 			if(con!=null) {
 				System.out.println("연결성공");
 			}else {

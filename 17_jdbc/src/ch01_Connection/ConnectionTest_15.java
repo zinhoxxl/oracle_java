@@ -10,8 +10,8 @@ public class ConnectionTest_15 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		final String driver ="oracle.jdbc.OracleDriver";
-		final String url ="jdbc:oracle:thin:@ljdbc:oracle:thin:@db202110231136_high?"
-				         + " TNS_ADMIN=/Users/alpha/oracle/Wallet_DB202110231136";
+		final String url ="jdbc:oracle:thin:@db202110231136_high?"
+				+ "TNS_ADMIN=/Users/alpha/oracle/Wallet_DB202110231136";
 		final String userid="madang";
 		final String pwd ="Scott12345678";
 	 try {
