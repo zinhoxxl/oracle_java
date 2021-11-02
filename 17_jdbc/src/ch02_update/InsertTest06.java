@@ -26,15 +26,22 @@ public class InsertTest06 {
             //4.쿼리문 생성 
             //4-3.등록 처리
             sql="insert into account "
-  +" values((select '111'||'-'||lpad(to_number(nvl(substr(nvl(max(accountno),0),5,3),0))+1,3,'0') from account),'"
-  + name+"','"+balance+"')";//작성
+               +" values((select '111'||'-'||lpad(to_number(nvl(substr(nvl(max(accountno),0),5,3),0))+1,3,'0') from account),'"
+               + name+"','"+balance+"')";//작성
             		//등록 실행
             		stmt.executeUpdate(sql);
            //
             System.out.println("계속할까요?(y/n)>");
             String isRun = scanner.next();
-            if(isRun.equalsIgnoreCase("n")) run=false;
-           }		
+            try {
+                if(isRun.equalsIgnoreCase("n")) run=false;
+                if(!(isRun.equalsIgnoreCase("n") | isRun.equalsIgnoreCase("y")) ) {
+                	throw new Exception("y나 n을 입력하세요");
+                }
+                }catch(Exception e) {
+                	System.out.println(e.getMessage());
+                }
+               }		
             
             //5.결과 조회 
             sql ="select * from account order by accountNo";

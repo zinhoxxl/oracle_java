@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 public class CallableEx {
 	public static void main(String[] args) throws Exception{
 
-		//1.드라이버로딩, 2.연결객체 생성하여 연결맺기
+		//1.드라이버로딩
 		Class.forName("oracle.jdbc.OracleDriver");
 		
 		//2.연결 객체 생성
